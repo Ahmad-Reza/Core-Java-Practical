@@ -1,3 +1,4 @@
+import java.lang.*;
 /**
  * wrapper class wraps around data type and returns object
  * there is eight wrapper class[Byte, Short, Integer, Double, String, Character, Long, Float]
@@ -11,7 +12,7 @@
  * Multithreding: need object to synchronization.
  * 
  */
-import java.lang.*;
+
 
 class WrapperExam{
     public static void main(String[] args)
@@ -34,5 +35,33 @@ class WrapperExam{
         // another way to creating wrapper object.. 
         Integer wobj = Integer.valueOf("111", 2);
         System.out.println(wobj);
+
+        //autoboxing vs unboxing..
+        //Auto boxing : conversion primitive to wrapper class object.
+                        //example int to Integer, double to Double so on..
+                        Integer iref1 =10;
+                        System.out.println(iref1);
+            //Auto unboxing : conversion wrapper class object to primitive.
+                        //Integer to int, Double to double so on
+                        int j1 = iref1.intValue();
+                        System.out.println(j1);
+
+        // Benefit fo Autoboxing..
+            //Auto Boxing helps in saving memory by	reusing	already	created	Wrapper	objects, Because
+            //Auto Boxing uses the static valueOf methods(which may return cached value within range(-127 to +128)).	However	wrapper	classes	created	using	new	are	not	reused 
+            
+            //Two wrapper objects created using	new	are	not	same object.
+                Integer	nineA	=	new Integer(9);
+                Integer	nineB	=	new Integer(9);
+                System.out.println(nineA==nineB);//false
+                System.out.println(nineA.equals(nineB));//true
+       
+            // Two	wrapper	objects	created	using boxing are same object.
+                Integer	nineC	=	9;
+                Integer	nineD	=	9;
+                System.out.println(nineC	==	nineD);//true
+                System.out.println(nineC.equals(nineD));//true
+        
+
     }
 }
