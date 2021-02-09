@@ -17,6 +17,10 @@ public class CastingExam {
             long value1 = 123445;
             int v1 = (int)value1;
             System.out.println("explicit exam:"+v1);
+           
+            int bigValue	=	3000; //
+            byte small	=	(byte)	bigValue; //size=1 byte(-128 to +127)
+            System.out.println(small);
     }
     
 }
